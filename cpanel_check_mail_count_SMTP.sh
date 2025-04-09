@@ -46,7 +46,7 @@ fi
 (
 echo "From: LimooHost <noreply@example.com>"
 echo "To: $EMAIL"
-echo "Subject: هشدار محدودیت ارسال ایمیل"
+echo "Subject:  Email Count Alert"
 echo "MIME-Version: 1.0"
 echo "Content-Type: text/html; charset=UTF-8"
 echo
