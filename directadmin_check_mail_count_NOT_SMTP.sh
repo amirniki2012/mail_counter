@@ -35,7 +35,7 @@ if [[ "$EMAIL_COUNT" -ge 300 ]]; then
 
 
 (
-echo "From: LimooHost <noreply@example.com>"
+echo "From: <noreply@example.com>"
 echo "To: $USER_EMAIL"
 echo "Subject: send email limited"
 echo "MIME-Version: 1.0"
