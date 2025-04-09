@@ -111,5 +111,3 @@ acl_check_message:
 
 This project is licensed under the MIT License.
 ```
-
-این محتوا را در فایل README.md خود جای‌گذاری کنید. اگر تغییرات بیشتری نیاز دارید، اطلاع دهید!
