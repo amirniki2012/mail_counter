@@ -111,34 +111,3 @@ acl_check_message:
 
 This project is licensed under the MIT License.
 ```
-```markdown
-## Log File Permissions
-
-To ensure proper functionality, the log files should have the following permissions and ownership:
-
-1. **Set Permissions**:
-    ```bash
-    chmod 666 script.log notsmtpdebug.log smtpdebug.log
-    ```
-
-2. **Set Ownership**:
-    ```bash
-    chown root:mail script.log notsmtpdebug.log smtpdebug.log
-    ```
-
-3. **Create Log Files (if not already created)**:
-    ```bash
-    touch script.log notsmtpdebug.log smtpdebug.log
-    chmod 666 script.log notsmtpdebug.log smtpdebug.log
-    chown root:mail script.log notsmtpdebug.log smtpdebug.log
-    ```
-
-## Script File Permissions
-
-To make the bash scripts executable, set the appropriate permissions:
-
-1. **Set Executable Permissions**:
-    ```bash
-    chmod +x cpanel_check_mail_count_NOT_SMTP.sh cpanel_check_mail_count_SMTP.sh directadmin_check_mail_count_NOT_SMTP.sh directadmin_check_mail_count_SMTP.sh
-    ```
-```
