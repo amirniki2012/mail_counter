@@ -44,7 +44,7 @@ fi
 
 
 (
-echo "From: LimooHost <noreply@example.com>"
+echo "From: <noreply@example.com>"
 echo "To: $EMAIL"
 echo "Subject:  Email Count Alert"
 echo "MIME-Version: 1.0"
