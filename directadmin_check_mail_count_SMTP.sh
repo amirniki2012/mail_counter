@@ -56,7 +56,7 @@ if [[ "$EMAIL_COUNT" -ge 300 ]]; then
         echo "Email for $USER: $EMAIL" | tee -a "$DEBUG_LOG_FILE" 2>&1
     fi
 
-BODY="email Body"
+    BODY="email Body"
 
     (
     echo "From: LimooHost <noreply@limoo.host>"
