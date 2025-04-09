@@ -59,9 +59,9 @@ if [[ "$EMAIL_COUNT" -ge 300 ]]; then
     BODY="email Body"
 
     (
-    echo "From: LimooHost <noreply@example.com>"
+    echo "From: <noreply@example.com>"
     echo "To: $EMAIL"
-    echo "Subject: هشدار محدودیت ارسال ایمیل"
+    echo "Subject:  Email Limit Exceeded"
     echo "MIME-Version: 1.0"
     echo "Content-Type: text/html; charset=UTF-8"
     echo
