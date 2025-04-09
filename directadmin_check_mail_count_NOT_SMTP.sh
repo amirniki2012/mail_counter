@@ -37,7 +37,7 @@ if [[ "$EMAIL_COUNT" -ge 300 ]]; then
 (
 echo "From: LimooHost <noreply@example.com>"
 echo "To: $USER_EMAIL"
-echo "Subject: هشدار محدودیت ارسال ایمیل"
+echo "Subject: send email limited"
 echo "MIME-Version: 1.0"
 echo "Content-Type: text/html; charset=UTF-8"
 echo
