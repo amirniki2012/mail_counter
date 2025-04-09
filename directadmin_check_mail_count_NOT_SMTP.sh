@@ -31,7 +31,7 @@ if [[ "$EMAIL_COUNT" -ge 300 ]]; then
         exit 0
     fi
 
-BODY="email Body"
+    BODY="email Body"
 
 
 (
