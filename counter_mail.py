@@ -8,8 +8,8 @@ import sys
 import signal
 
 # Set up logging
-logging.basicConfig(filename='/var/log/mail-checker/script_log.txt', level=logging.INFO,
-                    format='%(asctime)s - %(levelname)s - %(message)s')
+# logging.basicConfig(filename='/var/log/mail-checker/script_log.txt', level=logging.INFO,
+#                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 default_log_path = "/var/log/exim_mainlog"
 alternative_log_path = "/var/log/exim/mainlog"
