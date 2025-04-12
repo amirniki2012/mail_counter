@@ -24,7 +24,6 @@ else:
     log_path = alternative_log_path
     use_cpanel_regex = False
 
-# Define regex patterns
 if use_cpanel_regex:
     sender_pattern = re.compile(
         r'(?P<datetime>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+(?P<msgid>\S+)\s+'
