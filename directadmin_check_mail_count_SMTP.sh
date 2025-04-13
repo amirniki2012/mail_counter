@@ -3,6 +3,9 @@ mails_users_file="/var/log/mail-checker/mails_users.txt"
 LOG_FILE="/var/log/mail-checker/script.log"
 DEBUG_LOG_FILE="/var/log/mail-checker/smtpdebug.log"
 JSON_FILE="/var/log/mail-checker/successful_email_counts.json"
+EXIM_LOG="/var/log/exim_mainlog"
+TODAY=$(date +"%Y-%m-%d")
+
 
 # Log start immediately
 echo "Script started at: $(date)" >> "$DEBUG_LOG_FILE" 2>&1
@@ -53,9 +56,20 @@ if [[ "$EMAIL_COUNT" -ge 300 ]]; then
         sync
         exit 1  # Indicate failure to Exim
     else
+        MATCH_LINE=$(grep "$EMAIL" "$EXIM_LOG" | grep "$TODAY" | grep 'C="250 OK' | tail -n 1) #check if email was sent today
         echo "Email for $USER: $EMAIL" | tee -a "$DEBUG_LOG_FILE" 2>&1
     fi
-
+    if [[ -n "$MATCH_LINE" ]]; then
+        echo "Found successful email for $EMAIL today." | tee -a "$DEBUG_LOG_FILE" 2>&1
+        MESSAGE_ID=$(echo "$MATCH_LINE" | awk '{print $3}')
+        echo "Message ID: $MESSAGE_ID" | tee -a "$DEBUG_LOG_FILE" 2>&1
+        if grep "$MESSAGE_ID" "$EXIM_LOG" | grep -q "U=mailnull"; then
+            echo "User already received notification today, skipping." | tee -a "$DEBUG_LOG_FILE" 2>&1
+            sync
+            exit 1
+        fi
+    fi
+    
     BODY="email Body"
 
     (
