@@ -135,7 +135,7 @@ def process_temp_file():
         time.sleep(1)
 
 def tail_f(file_path):
-    with open(file_path, 'r') as log_file, open(temp_file, 'a', buffering=1) as temp_log:
+    with open(file_path, 'r', encoding='latin1', errors='ignore') as log_file, open(temp_file, 'a', buffering=1) as temp_log:
         log_file.seek(0, 2)
         message_status = {}
         processed_msgids = set()
